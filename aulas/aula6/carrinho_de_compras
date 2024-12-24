@@ -1,0 +1,48 @@
+class CarrinhoDeCompras:
+    def __init__(self):
+        self.lista = {}
+
+    # # def add_prod(self, produto, qtidade):
+    # #     self.produto = produto
+    # #     self.qtidade = qtidade
+    # #     if self.produto in self.lista:
+    # #         self.lista[produto] += qtidade
+
+    #     else:
+    #         self.lista[produto] = qtidade
+
+    def __setitem__(self, produto, qtidade):
+        self.lista[produto] = qtidade
+
+    def __getitem__(self, produto):
+        return self.lista[produto]
+    
+   # def __str__(self):
+   #     return str(self.lista)
+
+    
+
+if __name__ == '__main__':
+
+    # carrinho = Carrinho()
+    # carrinho.add_prod('Camisas', 20)
+    # carrinho.add_prod('Calças', 50)
+    # carrinho.add_prod('Cuecas', 30)
+    # carrinho.add_prod('Camisas', 55)
+    # print(carrinho)
+
+    # carrinho = CarrinhoDeCompras()
+    # carrinho['Camiseta'] = 50
+    # carrinho['Calça'] = 40
+    # carrinho['Cueca'] = 100
+    # print(f'A quantidade de Camisetas é {carrinho['Camiseta']} unidades)')
+
+    for _ in range(2):
+        item = input("Adicione um produto: ")
+        qt = int(input('Adicione uma quantidade: '))
+        carrinho = CarrinhoDeCompras()
+        carrinho[item] = qt
+
+    
+    pesquisa = input('Qual item a consultar? ')
+    print(f'A quantidade de {pesquisa} é {carrinho[item]} unidades')

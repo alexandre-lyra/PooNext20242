@@ -1,0 +1,37 @@
+class Produto:
+    def __init__(self, nome, preco):
+        self.nome = nome
+        self.preco = preco
+       
+
+    def __eq__(self, outro):
+        return self.nome == outro.nome and self.preco == outro.preco
+    
+
+    def __repr__(self):
+        return f'Produto(Nome= {self.nome}, Preco= {self.preco:.2f})'
+    
+
+if __name__ == '__main__':
+
+    produto1 = Produto('Camisa', 25)
+    produto2 = Produto('Camisa', 35)
+    produto3 = Produto('Calça', 25)
+    produto4 = Produto('Calça', 35)
+    produto5 = Produto('Camisa', 25)
+    produto6 = Produto('Calça', 25)
+
+    print(produto1 == produto2)
+    print(produto1 == produto3)
+    print(produto3 == produto6)
+    print(produto1 == produto5)
+
+    print(produto1)
+    print(produto2)
+    print(produto3)
+    print(produto4)
+    print(produto5)
+    print(produto6)
+
+
+
