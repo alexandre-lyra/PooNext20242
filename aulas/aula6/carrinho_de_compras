@@ -15,7 +15,12 @@ class CarrinhoDeCompras:
         self.lista[produto] = qtidade
 
     def __getitem__(self, produto):
-        return self.lista[produto]
+        try:
+            return self.lista[produto]
+        
+        except KeyError:
+            print('Produto não encontrado!')
+            return 'ZERO'
     
    # def __str__(self):
    #     return str(self.lista)
@@ -37,12 +42,12 @@ if __name__ == '__main__':
     # carrinho['Cueca'] = 100
     # print(f'A quantidade de Camisetas é {carrinho['Camiseta']} unidades)')
 
+    carrinho = CarrinhoDeCompras()
     for _ in range(2):
-        item = input("Adicione um produto: ")
+        item = input("Adicione um produto: ").lower()
         qt = int(input('Adicione uma quantidade: '))
-        carrinho = CarrinhoDeCompras()
         carrinho[item] = qt
-
     
-    pesquisa = input('Qual item a consultar? ')
-    print(f'A quantidade de {pesquisa} é {carrinho[item]} unidades')
+    
+    pesquisa =(input('Qual item a consultar? ')).lower()
+    print(f'A quantidade de {pesquisa} é {carrinho[pesquisa]} unidades')
